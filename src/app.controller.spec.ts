@@ -12,10 +12,10 @@ describe("AppController", () => {
         }).compile();
     });
 
-    describe("getHello", () => {
-        it('should return "Hello World!"', () => {
+    describe("getLandingMessage", () => {
+        it('should return landing message', () => {
             const appController = app.get<AppController>(AppController);
-            expect(appController.getHello()).toBe("Hello World!");
+            expect(appController.getLandingMessage().name).toBe("rentsync-webhook");
         });
     });
 });

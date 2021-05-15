@@ -1,8 +1,9 @@
 import { Injectable } from "@nestjs/common";
+import pkg from "../package.json";
 
 @Injectable()
 export class AppService {
-    getHello(): string {
-        return "Hello World!";
+    getLandingMessage(): Record<string, any> {
+        return { name: pkg.name, version: pkg.version };
     }
 }
