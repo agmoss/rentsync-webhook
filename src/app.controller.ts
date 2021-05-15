@@ -6,7 +6,7 @@ export class AppController {
     constructor(private readonly appService: AppService) {}
 
     @Get()
-    getLandingMessage(): Record<string, any>  {
+    getLandingMessage(): Record<string, any> {
         return this.appService.getLandingMessage();
     }
 }

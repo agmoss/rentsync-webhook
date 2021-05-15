@@ -13,9 +13,11 @@ describe("AppController", () => {
     });
 
     describe("getLandingMessage", () => {
-        it('should return landing message', () => {
+        it("should return landing message", () => {
             const appController = app.get<AppController>(AppController);
-            expect(appController.getLandingMessage().name).toBe("rentsync-webhook");
+            expect(appController.getLandingMessage().name).toBe(
+                "rentsync-webhook"
+            );
         });
     });
 });

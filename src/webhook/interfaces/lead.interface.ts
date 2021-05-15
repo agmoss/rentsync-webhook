@@ -21,5 +21,6 @@ interface Customer {
 export interface Lead {
     readonly source: Source;
     readonly client: Client;
+    readonly customer: Customer;
     readonly sent_at: string;
 }

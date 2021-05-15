@@ -6,8 +6,11 @@ import * as winston from "winston";
 import chalk from "chalk";
 import { winstonAzureBlob } from "winston-azure-blob";
 
-import { NODE_ENV, STORAGE_ACCOUNT_KEY, STORAGE_ACCOUNT_NAME } from "../environments";
-
+import {
+    NODE_ENV,
+    STORAGE_ACCOUNT_KEY,
+    STORAGE_ACCOUNT_NAME,
+} from "../environments";
 
 export const WL = () => {
     switch (NODE_ENV) {
@@ -58,7 +61,6 @@ export const WL = () => {
                 ],
             });
         }
-
         case "production": {
             return WinstonModule.createLogger({
                 transports: [
@@ -75,7 +77,7 @@ export const WL = () => {
                                 name: STORAGE_ACCOUNT_NAME,
                                 key: STORAGE_ACCOUNT_KEY,
                             },
-                            containerName: "logs",
+                            containerName: "rentsync",
                             blobName: "production_error",
                             level: "error",
                             rotatePeriod: "YYYY-MM-DD",
@@ -87,7 +89,7 @@ export const WL = () => {
                                 name: STORAGE_ACCOUNT_NAME,
                                 key: STORAGE_ACCOUNT_KEY,
                             },
-                            containerName: "logs",
+                            containerName: "rentsync",
                             blobName: "production_info",
                             level: "info",
                             rotatePeriod: "YYYY-MM-DD",
@@ -101,7 +103,7 @@ export const WL = () => {
                                 name: STORAGE_ACCOUNT_NAME,
                                 key: STORAGE_ACCOUNT_KEY,
                             },
-                            containerName: "logs",
+                            containerName: "rentsync",
                             blobName: "production_exceptions",
                             rotatePeriod: "YYYY-MM-DD",
                         })

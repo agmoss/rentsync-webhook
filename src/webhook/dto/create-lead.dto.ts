@@ -36,6 +36,8 @@ export class CreateLeadDto {
     readonly source: SourceDto;
     @IsDefined()
     readonly client: ClientDto;
+    @IsDefined() 
+    customer: CustomerDto;
     @IsString()
     readonly sent_at: string;
 }
