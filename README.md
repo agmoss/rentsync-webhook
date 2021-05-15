@@ -1,5 +1,54 @@
 # `rentsync-webhook`
 
+> Process and store incoming lead data
+
+
+## Requirements
+
+- [x] POST endpoint for data ingestion
+- [x] Logging of app data & leads to blob storage
+- [ ] Storage of structured lead data in database
+- [ ] Deploy to live url
+
+
+## Running the app
+
+```bash
+# development
+$ yarn run start
+
+# watch mode
+$ yarn run start:dev
+
+# production mode
+$ yarn run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ yarn run test
+
+# e2e tests
+$ yarn run test:e2e
+
+# test coverage
+$ yarn run test:cov
+
+# Single test
+
+--testNamePattern
+
+npx jest -t 'testNamePattern'
+```
+
+## Build 
+
+```bash
+$ yarn run build
+```
+
 ## Ingest data
 
 ```bash
