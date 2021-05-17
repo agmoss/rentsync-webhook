@@ -6,7 +6,7 @@ interface Source {
 
 interface Client {
     recipient_email: string;
-    building_id: string;
+    building_id: number;
 }
 
 interface Customer {

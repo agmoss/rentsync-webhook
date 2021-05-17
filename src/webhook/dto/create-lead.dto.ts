@@ -13,7 +13,7 @@ class ClientDto {
     @IsString()
     recipient_email: string;
     @IsInt()
-    building_id: string;
+    building_id: number;
 }
 
 class CustomerDto {

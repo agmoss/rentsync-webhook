@@ -61,17 +61,17 @@ curl -X POST -H "Content-Type: application/json" \
     },
     "client": {
         "recipient_email": "sample@sample.com",
-        "building_id": 1,
-        "customer": {
-            "first_name": "sample",
-            "last_name": "sample",
-            "full_name": "sample sample",
-            "email": "sample@me.com",
-            "phone": "4034567890",
-            "comment": "sample_comment"
-        },
-        "sent_at": "now"
-    }
+        "building_id": 1
+    },
+    "customer": {
+        "first_name": "sample",
+        "last_name": "sample",
+        "full_name": "sample sample",
+        "email": "sample@me.com",
+        "phone": "4034567890",
+        "comment": "sample_comment"
+    },
+    "sent_at": "now"
 }' \
 http://localhost:3000/webhook
 ```

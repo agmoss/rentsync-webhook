@@ -8,4 +8,10 @@ export const NODE_ENV: _env = (process.env.NODE_ENV as _env) || "development";
 
 export const STORAGE_ACCOUNT_NAME = process.env.STORAGE_ACCOUNT_NAME || "";
 export const STORAGE_ACCOUNT_KEY = process.env.STORAGE_ACCOUNT_KEY || "";
+
+export const DB_PORT = process.env.STORAGE_ACCOUNT_NAME || 3306;
+export const DEV_DATABASE = process.env.DEV_DATABASE || "";
+export const DEV_PASSWORD = process.env.DEV_PASSWORD || "";
+export const DEV_USERNAME = process.env.DEV_USERNAME || "";
+
 export const APP_PORT = 3000;
