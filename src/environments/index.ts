@@ -14,4 +14,9 @@ export const DEV_DATABASE = process.env.DEV_DATABASE || "";
 export const DEV_PASSWORD = process.env.DEV_PASSWORD || "";
 export const DEV_USERNAME = process.env.DEV_USERNAME || "";
 
+export const PROD_HOST = process.env.PROD_HOST || "";
+export const PROD_DATABASE = process.env.PROD_DATABASE || "";
+export const PROD_PASSWORD = process.env.PROD_PASSWORD || "";
+export const PROD_USERNAME = process.env.PROD_USERNAME || "";
+
 export const APP_PORT = 3000;
