@@ -3,6 +3,7 @@ import Table from "cli-table3";
 import chalk from "chalk";
 import * as dotenv from "dotenv";
 import figlet from "figlet";
+import bodyParser from "body-parser";
 
 import { __Logger } from "./logger/logger.service";
 import pkg from "../package.json";
@@ -35,6 +36,7 @@ async function bootstrap() {
     const app = await NestFactory.create(AppModule, {
         logger: WL(),
     });
+    app.use(bodyParser.json({ limit: "50mb" }));
     await app.listen(APP_PORT);
     info();
 }

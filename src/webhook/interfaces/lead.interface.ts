@@ -1,26 +1,17 @@
-interface Source {
-    name: string;
-    ad_url: string;
-    ad_title: string;
-}
-
-interface Client {
-    recipient_email: string;
-    building_id: number;
-}
-
-interface Customer {
-    first_name: string;
-    last_name: string;
-    full_name: string;
-    email: string;
-    phone: string;
-    comment: string;
-}
-
 export interface Lead {
-    readonly source: Source;
-    readonly client: Client;
-    readonly customer: Customer;
-    readonly sent_at: string;
+    readonly comment: string;
+    readonly fullName: string;
+    readonly email: string;
+    readonly phone: string;
+    readonly adIdentifier: string;
+    readonly adUrl: string;
+    readonly source: string;
+    readonly sentAt: string;
+    readonly recipientEmail: string;
+    readonly firstName: string;
+    readonly lastName: string;
+    readonly clientKey: string;
+    readonly buildingId: number;
+    readonly adTitle: string;
+    readonly parser: string;
 }

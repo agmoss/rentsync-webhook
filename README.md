@@ -52,6 +52,7 @@ $ yarn run build
 ## Ingest data
 
 ```bash
+# DEPRECATED
 curl -X POST -H "Content-Type: application/json" \
     -d '{
     "source": {

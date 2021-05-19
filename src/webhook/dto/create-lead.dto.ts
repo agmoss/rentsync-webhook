@@ -1,43 +1,47 @@
-import { IsDefined, IsInt, IsString } from "class-validator";
-
-class SourceDto {
-    @IsString()
-    name: string;
-    @IsString()
-    ad_url: string;
-    @IsString()
-    ad_title: string;
-}
-
-class ClientDto {
-    @IsString()
-    recipient_email: string;
-    @IsInt()
-    building_id: number;
-}
-
-class CustomerDto {
-    @IsString()
-    first_name: string;
-    @IsString()
-    last_name: string;
-    @IsString()
-    full_name: string;
-    @IsString()
-    email: string;
-    @IsString()
-    phone: string;
-    @IsString()
-    comment: string;
-}
+import { IsString } from "class-validator";
 
 export class CreateLeadDto {
-    @IsDefined()
-    readonly source: SourceDto;
-    @IsDefined()
-    readonly client: ClientDto;
-    @IsDefined() 
-    customer: CustomerDto;
     @IsString()
-    readonly sent_at: string;
+    readonly comment: string;
+
+    @IsString()
+    readonly fullName: string;
+
+    @IsString()
+    readonly email: string;
+
+    @IsString()
+    readonly phone: string;
+
+    @IsString()
+    readonly adIdentifier: string;
+
+    @IsString()
+    readonly adUrl: string;
+
+    @IsString()
+    readonly source: string;
+
+    @IsString()
+    readonly sentAt: string;
+
+    @IsString()
+    readonly recipientEmail: string;
+
+    @IsString()
+    readonly firstName: string;
+
+    @IsString()
+    readonly lastName: string;
+
+    @IsString()
+    readonly clientKey: string;
+
+    readonly buildingId: number;
+
+    @IsString()
+    readonly adTitle: string;
+
+    @IsString()
+    readonly parser: string;
 }

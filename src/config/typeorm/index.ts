@@ -41,7 +41,7 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
                     autoLoadEntities: true,
                     synchronize: true,
                     entities: [LeadEntity],
-                    ssl: true
+                    ssl: true,
                 };
             }
         }

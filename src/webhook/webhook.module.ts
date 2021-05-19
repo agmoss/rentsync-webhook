@@ -6,7 +6,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { LeadEntity } from "./lead.entity";
 
 @Module({
-    imports:[TypeOrmModule.forFeature([LeadEntity])],
+    imports: [TypeOrmModule.forFeature([LeadEntity])],
     providers: [WebhookService, __Logger],
     controllers: [WebhookController],
 })
