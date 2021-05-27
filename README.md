@@ -76,3 +76,22 @@ curl -X POST -H "Content-Type: application/json" \
 }' \
 http://localhost:3000/webhook
 ```
+
+```bash
+curl -X POST -H "Content-Type: application/json" \
+    -d '{
+    "comment": "sample_comment",
+    "fullName": "sample sample",
+    "email": "sample@me.com",
+    "phone": "4034567890",
+    "adIdentifier": "sample_ad_identifier",
+    "adUrl": "sample_ad_url",
+    "source": "sample_source",
+    "sentAt": "now",
+    "recipientEmail": "sample@sample.com",
+    "adTitle": "sample_add_title",
+    "firstName": "sample",
+    "lastName": "sample"
+}' \
+http://localhost:4001/webhook
+```

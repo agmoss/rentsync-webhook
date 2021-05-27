@@ -1,4 +1,9 @@
-import { Module } from "@nestjs/common";
+import {
+    MiddlewareConsumer,
+    Module,
+    NestModule,
+    RequestMethod,
+} from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { TypeOrmModule } from "@nestjs/typeorm";
 
@@ -8,6 +13,8 @@ import { WebhookModule } from "./webhook/webhook.module";
 import { LoggerModule } from "./logger/logger.module";
 import { TypeOrmService } from "./config/typeorm";
 import { LoggingInterceptor } from "./logger/logging.interceptor";
+import { JsonBodyMiddleware } from "./middleware/json-body.middleware";
+import { RawBodyMiddleware } from "./middleware/raw-body.middleware";
 
 @Module({
     imports: [
@@ -26,4 +33,18 @@ import { LoggingInterceptor } from "./logger/logging.interceptor";
         },
     ],
 })
-export class AppModule {}
+
+
+export class AppModule implements NestModule {
+    public configure(consumer: MiddlewareConsumer): void {
+        consumer
+            .apply(RawBodyMiddleware)
+            .forRoutes({
+                path: "/webhook",
+                method: RequestMethod.POST,
+            })
+            .apply(JsonBodyMiddleware)
+            .forRoutes("*");
+    }
+}
+

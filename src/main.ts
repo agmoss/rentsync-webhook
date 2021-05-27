@@ -3,13 +3,13 @@ import Table from "cli-table3";
 import chalk from "chalk";
 import * as dotenv from "dotenv";
 import figlet from "figlet";
-import bodyParser from "body-parser";
 
 import { __Logger } from "./logger/logger.service";
 import pkg from "../package.json";
 import { AppModule } from "./app.module";
 import { WL } from "./logger/winston.logger";
 import { NODE_ENV, APP_PORT } from "./environments";
+import { ValidationPipe } from "@nestjs/common";
 
 const info = () => {
     const table = new Table();
@@ -31,12 +31,13 @@ const info = () => {
     );
     console.log(table.toString());
 };
-
+  
 async function bootstrap() {
     const app = await NestFactory.create(AppModule, {
+        bodyParser: false,
         logger: WL(),
     });
-    app.use(bodyParser.json({ limit: "50mb" }));
+    app.useGlobalPipes(new ValidationPipe());
     await app.listen(APP_PORT);
     info();
 }
