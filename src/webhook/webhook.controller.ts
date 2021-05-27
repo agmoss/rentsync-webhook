@@ -13,7 +13,9 @@ export class WebhookController {
      */
     @Post()
     async createLead(@Body() lead: Buffer) {
-        const _lead = JSON.parse(lead.toString()) as Lead
+        // TODO: Add run time validation
+        const _data = JSON.parse(lead.toString())
+        const _lead = _data.data as Lead
         this.webhookService.createLead(_lead);
     }
 

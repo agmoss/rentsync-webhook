@@ -7,8 +7,8 @@
 
 - [x] POST endpoint for data ingestion
 - [x] Logging of app data & leads to blob storage
-- [ ] Storage of structured lead data in database
-- [ ] Deploy to live url
+- [x] Storage of structured lead data in database
+- [x] Deploy to live url
 
 
 ## Running the app
@@ -75,23 +75,4 @@ curl -X POST -H "Content-Type: application/json" \
     "sent_at": "now"
 }' \
 http://localhost:3000/webhook
-```
-
-```bash
-curl -X POST -H "Content-Type: application/json" \
-    -d '{
-    "comment": "sample_comment",
-    "fullName": "sample sample",
-    "email": "sample@me.com",
-    "phone": "4034567890",
-    "adIdentifier": "sample_ad_identifier",
-    "adUrl": "sample_ad_url",
-    "source": "sample_source",
-    "sentAt": "now",
-    "recipientEmail": "sample@sample.com",
-    "adTitle": "sample_add_title",
-    "firstName": "sample",
-    "lastName": "sample"
-}' \
-http://localhost:4001/webhook
 ```

@@ -16,6 +16,7 @@ export class WebhookService {
     }
 
     async createLead(lead: Lead) {
+        this.logger.log(JSON.stringify(lead))
         try {
             return await this.leadRepository.save({...lead, leadContents:JSON.stringify(lead)});
         } catch (e) {

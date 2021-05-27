@@ -27,10 +27,10 @@ import { RawBodyMiddleware } from "./middleware/raw-body.middleware";
     controllers: [AppController],
     providers: [
         AppService,
-        {
-            provide: APP_INTERCEPTOR,
-            useClass: LoggingInterceptor,
-        },
+        // {
+        //     provide: APP_INTERCEPTOR,
+        //     useClass: LoggingInterceptor,
+        // },
     ],
 })
 
