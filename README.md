@@ -2,14 +2,12 @@
 
 > Process and store incoming lead data
 
-
 ## Requirements
 
 - [x] POST endpoint for data ingestion
 - [x] Logging of app data & leads to blob storage
 - [x] Storage of structured lead data in database
 - [x] Deploy to live url
-
 
 ## Running the app
 
@@ -43,10 +41,10 @@ $ yarn run test:cov
 npx jest -t 'testNamePattern'
 ```
 
-## Build 
+## Build
 
 ```bash
-$ yarn run build
+yarn run build
 ```
 
 ## Ingest data

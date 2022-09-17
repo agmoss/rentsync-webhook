@@ -39,7 +39,7 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
                     password: PROD_PASSWORD,
                     database: PROD_DATABASE,
                     autoLoadEntities: true,
-                    synchronize: true,
+                    synchronize: false,
                     entities: [LeadEntity],
                     ssl: true,
                 };
